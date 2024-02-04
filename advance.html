@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance Funtion</title>
+</head>
+<body>
+
+  <button id="my-button">mala Daab NA</button>
+  
+
+  <script>
+
+   // anonymus Function
+   //mhnje yala name nahi aahe ha without name cha aahe aani ha nehmi ref mhannun kaam yetto 
+
+   let sum = function(num1 , num2){
+    return num1+num2;
+   };
+  
+   //((4+5)+7)
+   let sumThreeNumbers = function(num1,num2,num3, sumTwoNumber){
+
+    let sum1 = sumTwoNumber(num1,num2);
+    return sumTwoNumber(sum1,num3);
+
+   };
+
+   console.log(sumThreeNumbers(5,5,6, sum));
+
+
+   //setTimeout calling 
+   // waapan yaat na second as mili second gheteo 
+
+   let alaram = () => console.log('subha hop gai bhai ');
+   //let timerId =  setTimeout(alaram,10000); --- isse id milega 
+   setTimeout(alaram,10000);
+   // function call , yaat kiti second nanter call karaychay te 
+
+   console.log('alarm set');
+   // yahan hum exicute hone se pehle hi usko cancel kar sakte hai 
+
+   //clearTimeout(timerId);
+
+
+   //event listener
+
+
+    let buttonElement = document.querySelector('#my-button');
+    let behaviour = event => console.log('I am clicked');
+    buttonElement.addEventListener('click', behaviour);
+
+    let printDate = event => console.log(new Date());
+    buttonElement.addEventListener('click', printDate);
+    //buttonElement.removeEventListener('click', behaviour);
+
+
+  </script>
+</body>
+</html>
